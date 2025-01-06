@@ -1,32 +1,40 @@
+.footer {
+    background-color: #000; /* 黑色背景 */
+    color: #fff; /* 白色文字 */
+    padding: 30px 20px; /* 底部内边距 */
+    text-align: center; /* 文字居中 */
+    font-family: Arial, sans-serif; /* 字体 */
+}
 
-        /* 底部容器 */
-        .footer {
-            background-color: #000; /* 黑色背景 */
-            color: #fff; /* 白色文字 */
-            padding: 20px;
-            text-align: center;
-        }
+.footer h2 {
+    margin-bottom: 20px; /* 标题下边距 */
+    font-size: 24px;
+    font-weight: bold;
+}
 
-        .footer h2 {
-            margin-bottom: 10px;
-            font-size: 24px;
-        }
+.wechat {
+    margin-bottom: 20px; /* 微信号内容的下边距 */
+}
 
-        /* 微信号部分 */
-        .footer .wechat {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
+.wechat p {
+    font-size: 18px;
+    margin: 5px 0; /* 每段文字的上下间距 */
+}
 
-        /* 图片部分 */
-        .footer .wechat-img {
-            margin: 0 auto;
-            max-width: 200px; /* 图片最大宽度 */
-            width: 100%; /* 图片响应式 */
-            height: auto;
-        }
+.wechat p:nth-child(2) {
+    color: yellow; /* 第二段文字设置为黄色 */
+}
 
-        /* 联系方式容器的内边距 */
-        .footer .contact-container {
-            margin-top: 15px;
-        }
+.wechat-img {
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: space-around; /* 水平排列图片，并分配空隙 */
+    align-items: center; /* 垂直居中图片 */
+    margin-top: 20px;
+}
+
+.wechat-img-item {
+    width: 200px; /* 图片宽度 */
+    height: auto; /* 自适应高度 */
+    border: 2px solid #fff; /* 白色边框 */
+    border-radius: 10px; /* 圆角边框 */
+}
