@@ -53,27 +53,31 @@
             height: 500px;
             background-position: center;
         }
-        .about h1{
+        .about{
             font-family: 'Courier New', Courier, monospace;
+            text-align: center; font-size: 70px; 
+            color: #fff;
+            
         }
         /* 标题文字 */
-    .title h1, .title p {
-    font-size: 50px;
-    color: #fff;
-    left: 100px;
-    animation: fadeInOut 1.5s ease-in-out infinite;
-    display: inline-block; /* 确保文字是水平排列的 */
-    white-space: nowrap; /* 防止文字换行 */
-    }
-    .aboutTitle{
-            text-shadow: 
-            1px 1px 0px black,   /* 上右 */
-            -1px 1px 0px black,  /* 下右 */
-            1px -1px 0px black,  /* 上左 */
-            -1px -1px 0px black; /* 下左 */
+        .title h1, .title p {
+        font-size: 50px;
+        color: #fff;
+        left: 100px;
+        animation: fadeInOut 1.5s ease-in-out infinite;
+        display: inline-block; /* 确保文字是水平排列的 */
+        white-space: nowrap; /* 防止文字换行 */
+        }
+        .aboutTitle{
+                text-shadow: 
+                1px 1px 0px black,   /* 上右 */
+                -1px 1px 0px black,  /* 下右 */
+                1px -1px 0px black,  /* 上左 */
+                -1px -1px 0px black; /* 下左 */
 
 
-    }
+
+        }
     
     /* 更大的标题 */
     .title h1 {
@@ -199,9 +203,9 @@
 
     <div class="about ua" id="about">
         <div id="about ua">
-            <h1 style="text-align: center; font-size: 70px; " class="aboutTitle">
-            欢迎进入灵犀小圈交友俱乐部官网
-            </h1>
+            <div class="aboutTitle">
+                欢迎进入灵犀小圈交友俱乐部官网
+            </div>
             <div class="contains">
                 <div class="contain">
                     <div class="conImg"></div>
@@ -228,20 +232,24 @@
         
         <div id="contact">
              <!-- 底部联系信息 -->
-    <div class="footer">
-        <h2>联系我们</h2>
-
-        <!-- 微信号展示 -->
-        <div class="wechat">
-            <p>扫描二维码添加微信</p>
-            <p style="color: yellow;">"抖音搜索 灵犀交友俱乐部 也能找到我们"</p>
-        </div>
-
-        <!-- 微信二维码图片 -->
-        <div class="wechat-img">
-            <img src="img/wechat.png" alt="微信二维码" width="200px">
-        </div>
-    </div>
+             <div class="footer">
+                <h2>联系我们</h2>
+            
+                <!-- 微信号展示 -->
+                <div class="wechat">
+                    <p>扫描二维码添加微信 </p>
+                    <p style="color: white;">左边为客服号 右边为合作公众号</p>
+                    
+                    <p style="color: yellow;">"抖音搜索 灵犀交友俱乐部 也能找到我们"</p>
+                </div>
+            
+                <!-- 微信二维码图片 -->
+                <div class="wechat-img">
+                    <img src="img/wechat.png" alt="微信二维码" class="wechat-img-item">
+                    <img src="img/wechat2.png" alt="微信二维码" class="wechat-img-item">
+                </div>
+            </div>
+            
         
         
         </div>
