@@ -1,0 +1,49 @@
+
+.contains{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+}
+.contain{
+    height: 110px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace; 
+     
+}
+.conImg{
+    background-image: url(/img/202309061.png);
+}
+
+.contain:nth-child(even) {
+    grid-template-columns: 2fr 1fr; /* 偶数行第一列大，第二列小 */
+}
+
+/* 客户端 */
+@media (min-width: 1000px) {
+    .contains{
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+    
+    }
+    .contain{
+        height: 300px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 30px;
+        margin-bottom: 20px;
+        color: white;
+        font-size: 25px;
+        font-family: 'Courier New', Courier, monospace;   
+    }
+    .contain img{
+       display: none;
+    }
+}
