@@ -6,6 +6,7 @@
     <title></title>
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/yaoqiu.css">
     <style>
         .bd1{
             background-color: #f8f9fa;
@@ -154,6 +155,9 @@
                         </div>
                     </li> -->
                     <li class="nav-item">
+                        <a class="nav-link" href="#yaoqiu">进群</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#contact">联系</a>
                     </li>
                     
@@ -230,13 +234,15 @@
 
         </div>
     </div>
-        
-        <div id="contact">
-            <div class="payment">
-                <h3>进群要求</h3>
-                <p>男生缴费68r 女生通过举牌报时验证 加入我们的社群！</p>
-               
+        <div id="yaoqiu">
+           
+            <div class="jinqun" style="display: flex;">
+                <img src="img/b.png" alt="">
+                <img src="img/a.png" alt="" >
             </div>
+        </div>
+        <div id="contact">
+            
              <!-- 底部联系信息 -->
              <div class="footer">
                 <h2>联系我们</h2>
@@ -328,5 +334,26 @@
             });
         });
     </script>
+        <script>
+            // 获取左边和右边的图片
+            const leftImage = document.querySelector('.jinqun img:first-child');
+            const rightImage = document.querySelector('.jinqun img:last-child');
+    
+            // 左边图片点击事件
+            leftImage.addEventListener('click', () => {
+                // 如果左边图片被点击，移动左边图片
+                leftImage.style.transform = 'translateX(0)';
+                
+                rightImage.style.transform = 'translateX(100%)';
+
+            });
+    
+            // 右边图片点击事件
+            rightImage.addEventListener('click', () => {
+                // 如果右边图片被点击，移动右边图片
+                leftImage.style.transform = 'translateX(-100%)';
+                rightImage.style.transform = 'translateX(-100%)';
+            });
+        </script>
     </body>
     </html>

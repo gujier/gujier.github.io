@@ -14,10 +14,27 @@
     color: rgb(255, 255, 255);
     font-size: 12px;
     font-family: 'Courier New', Courier, monospace; 
+    background: no-repeat;
      
 }
-.conImg{
-    background-image: url(/img/202309061.png);
+.conImg:nth-child(1) {
+    background-image: url('/img/202309061.png');
+}
+
+/* 为第二个 .conImg 设置背景图片 */
+.conImg:nth-child(2) {
+    background-image: url('/img/202309062.png');
+}
+
+/* 为第三个 .conImg 设置背景图片 */
+.contain:nth-child(3) .conImg{
+    background-image: url('/img/202309063.png');
+    
+}
+
+/* 为第四个 .conImg 设置背景图片 */
+.contain:nth-child(4) .conImg{
+    background-image: url('/img/202309064.png');
 }
 
 .contain:nth-child(even) {
@@ -43,7 +60,28 @@
         font-size: 25px;
         font-family: 'Courier New', Courier, monospace;   
     }
-    .contain img{
-       display: none;
+
+    .conImg:nth-child(1) {
+        background-image: url('/img/3img/1.jpg');
+        background-size: cover;
+    }
+    
+    /* 为第二个 .conImg 设置背景图片 */
+    .conImg:nth-child(2) {
+        background-image: url('/img/3img/2.jpg');
+        background-size: cover;
+    }
+    
+    /* 为第三个 .conImg 设置背景图片 */
+    .contain:nth-child(3) .conImg{
+        background-image: url('/img/3img/3.jpg');
+        background-size: cover;
+        
+    }
+    
+    /* 为第四个 .conImg 设置背景图片 */
+    .contain:nth-child(4) .conImg{
+        background-image: url('/img/3img/4.jpg');
+        background-size: cover;
     }
 }

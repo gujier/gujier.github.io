@@ -1,0 +1,20 @@
+.jinqun {
+    display: flex;
+    overflow: hidden; /* 隐藏超出容器的部分 */
+    width: 100%;
+}
+
+.jinqun img {
+    width: 100%; /* 每张图片宽度设置为200%，使其能覆盖整个容器 */
+    height: auto;
+    transition: transform 0.5s ease-in-out; /* 添加动画过渡 */
+    cursor: pointer; /* 鼠标指针变为手型，表明可点击 */
+}
+.jinqun img:first-child {
+transform: translateX(-50%); /* 将第一张图片左移50%，使左半部分超出屏幕 */
+}
+
+.jinqun img:last-child {
+transform: translateX(-50%); /* 将第二张图片右移50%，使右半部分超出屏幕 */
+}
+
