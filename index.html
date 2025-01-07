@@ -338,21 +338,43 @@
             // 获取左边和右边的图片
             const leftImage = document.querySelector('.jinqun img:first-child');
             const rightImage = document.querySelector('.jinqun img:last-child');
-    
+            let count = 1; // 使用 let 声明 count，确保它是可变的
+            let boo=true;
+
             // 左边图片点击事件
             leftImage.addEventListener('click', () => {
-                // 如果左边图片被点击，移动左边图片
-                leftImage.style.transform = 'translateX(0)';
-                
-                rightImage.style.transform = 'translateX(100%)';
+                if (count === 1) {  // 判断 count 是否为 1
+                    console.log('左边图片被点击');
+                    
+                    // 如果左边图片被点击，移动左边图片
+                    leftImage.style.transform = 'translateX(0)';
+                    rightImage.style.transform = 'translateX(100%)';
 
+                    count = 0;  // 将 count 改为 0
+                } else if (count === 0) {  // 判断 count 是否为 0
+                    console.log('右边图片被点击');
+                    
+                    // 如果左边图片被点击，移动左边图片
+                    leftImage.style.transform = 'translateX(-50%)';
+                    rightImage.style.transform = 'translateX(-50%)';
+
+                    count = 1;  // 将 count 改为 1
+                }
             });
     
             // 右边图片点击事件
             rightImage.addEventListener('click', () => {
-                // 如果右边图片被点击，移动右边图片
-                leftImage.style.transform = 'translateX(-100%)';
-                rightImage.style.transform = 'translateX(-100%)';
+                if(boo){
+                    // 如果右边图片被点击，移动右边图片
+                    leftImage.style.transform = 'translateX(-100%)';
+                    rightImage.style.transform = 'translateX(-100%)';
+                    boo=!boo;
+                }else if(!boo){
+                    leftImage.style.transform = 'translateX(-50%)';
+                    rightImage.style.transform = 'translateX(-50%)';
+                    boo=!boo;
+                }
+
             });
         </script>
     </body>
