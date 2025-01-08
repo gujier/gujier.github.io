@@ -5,54 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-       .jinqun {
-            display: flex;
-            overflow: hidden; /* 隐藏超出容器的部分 */
-            width: 200vh;
-          
-        }
-
-        .jinqun img {
-            width: 100%; /* 每张图片宽度设置为200%，使其能覆盖整个容器 */
-            height: auto;
-            transition: transform 0.5s ease-in-out; /* 添加动画过渡 */
-            cursor: pointer; /* 鼠标指针变为手型，表明可点击 */
-        }
-.jinqun img:first-child {
-    transform: translateX(-50%); /* 将第一张图片左移50%，使左半部分超出屏幕 */
+        .news-container {
+    width: 100%;
+    overflow: hidden; /* 隐藏滚动条 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
 }
 
-.jinqun img:last-child {
-    transform: translateX(-50%); /* 将第二张图片右移50%，使右半部分超出屏幕 */
+.news-bar {
+    white-space: nowrap;  /* 防止文本换行 */
+    display: inline-block;
+    padding: 10px 0;
+    color: white;
+    font-size: 16px;
 }
-
 
     </style>
 </head>
 <body>
-    <div class="jinqun" style="display: flex;">
-        <img src="img/b.png" alt="">
-        <img src="img/a.png" alt="" >
+    <div class="news-container">
+        <div class="news-bar">
+            <p>欢迎·加入</p>
+        </div>
     </div>
     <script>
-        // 获取左边和右边的图片
-        const leftImage = document.querySelector('.jinqun img:first-child');
-        const rightImage = document.querySelector('.jinqun img:last-child');
+        const newsContainer = document.querySelector('.news-container');
+const newsBar = document.querySelector('.news-bar');
 
-        // 左边图片点击事件
-        leftImage.addEventListener('click', () => {
-            // 如果左边图片被点击，移动左边图片
-            leftImage.style.transform = 'translateX(0)';
-            rightImage.style.transform = 'translateX(100%)';
-        });
+// 自动滚动的速度
+let scrollSpeed = 2;
+let scrollPosition = newsContainer.offsetWidth;
 
-        // 右边图片点击事件
-        rightImage.addEventListener('click', () => {
-            // 如果右边图片被点击，移动右边图片
-            leftImage.style.transform = 'translateX(-100%)';
-            rightImage.style.transform = 'translateX(-100%)';
-        });
+function scrollNews() {
+    scrollPosition -= scrollSpeed;
+    if (scrollPosition <= -newsBar.offsetWidth) {
+        scrollPosition = newsContainer.offsetWidth;  // 如果内容滚动出屏幕，重新开始
+    }
+    newsBar.style.transform = `translateX(${scrollPosition}px)`;  // 滚动效果
+    requestAnimationFrame(scrollNews);  // 循环执行
+}
+
+scrollNews();
+
     </script>
-
 </body>
 </html>
